@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151515">
+  <meta name="description" content="Quatro8 Bebidas — vinhos, destilados e boas escolhas. Catálogo digital com cotação sob consulta.">
+  <title>Quatro8 Bebidas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="#top" class="brand" aria-label="Quatro8 Bebidas"><img src="assets/brand/logo.webp" alt="Quatro8 Bebidas — Vinhos, destilados e boas escolhas."></a>
+  <nav class="main-nav" aria-label="Categorias principais">
+    <button data-cat="Vinhos">Vinhos</button>
+    <button data-cat="Espumantes & Champagnes">Espumantes</button>
+    <button data-cat="Destilados">Destilados</button>
+    <button data-cat="Licores & Aperitivos">Licores & Aperitivos</button>
+    <button data-cat="Prontos para Beber">Prontos para Beber</button>
+    <button data-week>Seleção da Semana</button>
+  </nav>
+  <button id="listButton" class="list-button" aria-label="Abrir lista para cotação">Minha lista <span id="listCount">0</span></button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">Mais que bebidas</span>
+    <h1>Boas escolhas para grandes momentos.</h1>
+    <p>Vinhos, destilados e boas experiências.</p>
+  </div>
+  <div class="hero-search">
+    <label for="globalSearch">Encontre sua bebida</label>
+    <div class="search-box"><span>⌕</span><input id="globalSearch" autocomplete="off" placeholder="Busque por marca, rótulo, país ou tipo de bebida..."><button id="searchButton">Buscar</button></div>
+    <div class="quick-search"><span>Ex.:</span><button>Cabernet</button><button>Chandon</button><button>Jack Daniel's</button><button>Chile</button><button>Gin</button><button>Aperol</button></div>
+  </div>
+</section>
+
+<section class="category-strip" aria-label="Tipos de bebida">
+  <button class="category-card" data-cat="Vinhos" style="--bg:url('../categories/vinhos.webp')"><strong>Vinhos</strong><span>Do Novo ao Velho Mundo</span></button>
+  <button class="category-card" data-cat="Espumantes & Champagnes" style="--bg:url('../categories/espumantes.webp')"><strong>Espumantes</strong><span>Celebre cada momento</span></button>
+  <button class="category-card" data-cat="Destilados" style="--bg:url('../categories/destilados.webp')"><strong>Destilados</strong><span>Grandes rótulos, grandes histórias</span></button>
+  <button class="category-card" data-cat="Licores & Aperitivos" style="--bg:url('../categories/licores.webp')"><strong>Licores & Aperitivos</strong><span>Sabores que surpreendem</span></button>
+  <button class="category-card" data-cat="Prontos para Beber" style="--bg:url('../categories/prontos.webp')"><strong>Prontos para Beber</strong><span>Praticidade com qualidade</span></button>
+  <button class="category-card" data-cat="Mixologia & Xaropes" style="--bg:url('../categories/mixologia.webp')"><strong>Xaropes & Mixologia</strong><span>Ingredientes para criar e servir</span></button>
+</section>
+
+<section class="home-browse">
+  <div class="section-heading"><h2>Vinhos por país</h2><button data-cat="Vinhos">Ver todos</button></div>
+  <div class="mini-grid country-grid">
+    <button data-country="Argentina" style="--bg:url('../categories/argentina.webp')">Argentina</button>
+    <button data-country="Chile" style="--bg:url('../categories/chile.webp')">Chile</button>
+    <button data-country="Brasil" style="--bg:url('../categories/brasil.webp')">Brasil</button>
+    <button data-country="França" style="--bg:url('../categories/franca.webp')">França</button>
+    <button data-country="Itália" style="--bg:url('../categories/italia.webp')">Itália</button>
+    <button data-country="Portugal" style="--bg:url('../categories/portugal.webp')">Portugal</button>
+  </div>
+
+  <div class="section-heading"><h2>Destilados por tipo</h2><button data-cat="Destilados">Ver todos</button></div>
+  <div class="mini-grid spirit-grid">
+    <button data-sub="Whisky" style="--bg:url('../categories/whisky.webp')">Whisky</button>
+    <button data-sub="Gin" style="--bg:url('../categories/gin.webp')">Gin</button>
+    <button data-sub="Vodka" style="--bg:url('../categories/vodka.webp')">Vodka</button>
+    <button data-sub="Rum" style="--bg:url('../categories/rum.webp')">Rum</button>
+    <button data-sub="Tequila" style="--bg:url('../categories/tequila.webp')">Tequila</button>
+    <button data-sub="Cachaça" style="--bg:url('../categories/cachaca.webp')">Cachaça</button>
+  </div>
+</section>
+
+<section id="catalog" class="catalog-section">
+  <div class="catalog-header">
+    <div><span id="catalogKicker">Catálogo</span><h2 id="catalogTitle">Explore nossos rótulos</h2><p id="catalogSubtitle">Preço e disponibilidade sob consulta.</p></div>
+    <button id="clearFilter" class="text-button" hidden>Limpar filtro</button>
+  </div>
+  <div id="subfilters" class="subfilters"></div>
+  <div id="resultMeta" class="result-meta"></div>
+  <div id="productGrid" class="product-grid"></div>
+  <button id="loadMore" class="load-more" hidden>Mostrar mais</button>
+</section>
+
+<section class="how-it-works">
+  <div><span class="eyebrow">Monte sua lista para cotação</span><h2>É rápido, fácil e sem compromisso.</h2></div>
+  <ol><li><b>1</b><span><strong>Escolha os rótulos</strong>Navegue e adicione os produtos desejados.</span></li><li><b>2</b><span><strong>Envie pelo WhatsApp</strong>Sua lista chega organizada para nossa equipe.</span></li><li><b>3</b><span><strong>Receba sua cotação</strong>Confirmamos preço e disponibilidade.</span></li></ol>
+</section>
+
+<section class="rules-bar">
+  <div><strong>Pedido mínimo</strong><span>R$ 250 em produtos</span></div>
+  <div><strong>Frete R$ 30</strong><span>Florianópolis e São José</span></div>
+  <div><strong>Acima de R$ 1.000</strong><span>frete grátis em Florianópolis e São José</span></div>
+  <div><strong>Outras regiões</strong><span>consulte disponibilidade e valor do frete</span></div>
+  <div><strong>Cotação</strong><span>válida por 24 horas</span></div>
+</section>
+
+<section class="delivery-info">
+  <h2>Como funciona a entrega</h2>
+  <p><strong>Entregas às terças e sextas-feiras, até 20h.</strong> Após recebermos sua lista, consultamos preço e disponibilidade e enviamos o orçamento atualizado. A data de entrega é confirmada junto com o fechamento do pedido, conforme disponibilidade dos produtos e retorno da cotação. <strong>Pedidos próximos à data de entrega poderão ser atendidos conforme disponibilidade.</strong></p>
+  <p><strong>Pix:</strong> 50% na confirmação do pedido e 50% na entrega.</p>
+  <p><strong>Cartão de crédito:</strong> 100% na confirmação do pedido, via link de pagamento. Parcelamento disponível conforme condições e taxas da operadora, informadas junto ao orçamento.</p>
+</section>
+</main>
+
+<footer>
+  <img src="assets/brand/logo.webp" alt="Quatro8 Bebidas">
+  <div><p>Preço e disponibilidade sob consulta.</p><p>Entregas e envios para outras regiões sob consulta.</p></div>
+  <div class="responsible"><strong>18+</strong><span>Venda exclusiva para maiores de 18 anos.<br>Beba com moderação.</span></div>
+</footer>
+
+<aside id="quoteDrawer" class="drawer" aria-hidden="true">
+  <div class="drawer-backdrop" data-close></div>
+  <div class="drawer-panel">
+    <div class="drawer-head"><div><span>Quatro8 Bebidas</span><h2>Lista para cotação</h2></div><button data-close aria-label="Fechar">×</button></div>
+    <div id="quoteItems" class="quote-items"></div>
+    <div class="quote-note">Pedido mínimo de R$ 250 em produtos. Preço e disponibilidade serão confirmados no orçamento.</div>
+    <form id="quoteForm">
+      <label>Seu nome<input id="customerName" required placeholder="Nome completo"></label>
+      <label>Endereço completo<textarea id="customerAddress" required rows="3" placeholder="Rua, número, complemento, bairro, cidade"></textarea></label>
+      <button type="submit" class="primary-action">Solicitar cotação pelo WhatsApp</button>
+    </form>
+  </div>
+</aside>
+<div id="toast" class="toast" role="status"></div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/app.js" defer></script>
+</body></html>
