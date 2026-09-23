@@ -1,0 +1,53 @@
+.delivery-info {
+  padding: 40px clamp(28px, 5vw, 72px);
+}
+
+.delivery-info h2 {
+  margin-bottom: 18px;
+}
+
+.delivery-info p {
+  max-width: 1280px;
+  line-height: 1.65;
+  margin: 4px 0 0;
+}
+
+.delivery-block {
+  margin-bottom: 18px;
+}
+
+.delivery-block:last-child {
+  margin-bottom: 0;
+}
+
+.delivery-heading,
+.delivery-notice {
+  display: block;
+}
+
+.delivery-heading {
+  line-height: 1.4;
+}
+
+.delivery-notice {
+  margin-top: 8px;
+  line-height: 1.55;
+}
+
+@media (max-width: 720px) {
+  .delivery-info {
+    padding: 28px 18px;
+  }
+
+  .delivery-info h2 {
+    margin-bottom: 14px;
+  }
+
+  .delivery-info p {
+    line-height: 1.6;
+  }
+
+  .delivery-block {
+    margin-bottom: 16px;
+  }
+}
