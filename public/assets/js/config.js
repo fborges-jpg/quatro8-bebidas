@@ -1,5 +1,5 @@
 window.QUATRO8_CONFIG = {
-  whatsappNumber: "", // Definir no final: somente números, ex. 5548999999999
+  whatsappNumber: "5548991995167",
   brandName: "Quatro8 Bebidas",
   minimumOrderText: "R$ 250 em produtos",
   quoteValidity: "24 horas",
